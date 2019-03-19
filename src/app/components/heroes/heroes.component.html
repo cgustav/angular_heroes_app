@@ -3,9 +3,11 @@
 </h2>
 <hr>
 
-<div class="card-columns mt-4 animated fadeIn fast" *ngFor="let heroe of heroes; let i = index">
-  <div class="card">
-    <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
+<!-- CARD COLUMNS: AUTO -->
+<div class="card-columns mt-4 animated fadeIn fast" >
+  <!-- CARD: NGFOR -->
+  <div class="card" *ngFor="let heroe of heroes; let i = index">
+    <img class="card-img-top" [src]="heroe.img" [alt]="heroe.nombre">
     <div class="card-body">
       <h5 class="card-title">{{ heroe.nombre }}</h5>
       <p class="card-text">{{ heroe.bio }}</p>
@@ -22,3 +24,4 @@
     </div>
   </div>
 </div>
+<!-- CARD COLUMNS: AUTO -->
