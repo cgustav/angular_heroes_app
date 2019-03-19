@@ -1,4 +1,3 @@
-
 <!-- NEW HEROES NAV -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
@@ -27,10 +26,23 @@
         <a class="nav-link" [routerLink]="['about']">About</a>
       </li>
     </ul>
+
+    <!-- SEARCH HERO-->
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+      <input class="form-control mr-sm-2" type="text" placeholder="Search a hero..." aria-label="Search" #inputHeroe>
+      <button (click)="searchHero(inputHeroe.value)" class=" btn btn-outline-success my-2 my-sm-0" type="button">
+        Search
+      </button>
+
+      <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search a hero..." aria-label="Search" (keydown.enter)="buscarHeroe(buscarTexto.value)" #buscarTexto>
+      <button (click)="buscarHeroe(buscarTexto.value)" class=" btn btn-outline-success my-2 my-sm-0" type="button">
+        Search
+      </button> -->
+
     </form>
+    <!-- SEARCH HERO-->
+
   </div>
   <!-- COLLAPSE NAV -->
 
