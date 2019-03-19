@@ -16,7 +16,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/shared/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
-import { HeroesdosComponent } from './components/heroesdos/heroesdos.component';
+import { HeroeDetailComponent } from './components/heroe-detail/heroe-detail.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { HeroesdosComponent } from './components/heroesdos/heroesdos.component';
     HomeComponent,
     AboutComponent,
     HeroesComponent,
-    HeroesdosComponent
+    HeroeDetailComponent,
   ],
   imports: [
     BrowserModule,
