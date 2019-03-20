@@ -4,27 +4,12 @@
 <hr>
 
 <!-- CARD COLUMNS: AUTO -->
-<div class="card-columns mt-4 animated fadeIn fast" >
-
-  <!-- CARD: NGFOR -->
-  <div class="card" *ngFor="let heroe of heroes; let i = index">
-    <img class="card-img-top" [src]="heroe.img" [alt]="heroe.nombre">
-    <div class="card-body">
-      <h5 class="card-title">{{ heroe.nombre }}</h5>
-      <p class="card-text">{{ heroe.bio }}</p>
-      <p class="card-text">Aparición: <small class="text-muted">{{ heroe.aparicion }}</small></p>
-
-      <button (click)="verHeroe(i)" type="button" class="btn btn-outline-warning btn-block">
-        Ver más...
-      </button>
-
-      <!-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary">
-        Ver más...
-      </a> -->
-
-    </div>
-  </div>
-  <!-- CARD: NGFOR -->
+<div class="card-columns mt-4 animated fadeIn fast">
+  <!-- *ngFor="let heroe of heroes; let i = index" -->
+  <app-hero-card [hero]="hero" *ngFor="let hero of heroes; let i = index" [index]="i">
+  </app-hero-card>
+  <!-- <app-hero-card (selectedHeroe)="displayHero( $event )" [hero]="hero" *ngFor="let hero of heroes; let i = index" [index]="i">
+  </app-hero-card> -->
 
 </div>
 <!-- CARD COLUMNS: AUTO -->

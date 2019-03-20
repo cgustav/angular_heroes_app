@@ -76,16 +76,49 @@ export class HeroesService {
     let heroesArray: Hero[] = [];
     criteria = criteria.toLowerCase();
 
-    this.heroes.forEach(hero => {
+    for (let i = 0; this.heroes.length > i; i++) {
 
-      if (criteria === hero.nombre.toLowerCase()) {
-        heroesArray.push(hero);
+      let hero = this.heroes[i]
+      let name = hero.nombre.toLowerCase()
+
+      if (!name.indexOf(criteria)) {
+        hero.id = i;
+        heroesArray.push(hero)
       }
-
-    });
+    }
 
     return heroesArray;
 
   }
 
+  searchHeroIndex(criteria: string) {
+
+    let heroesArray: Hero[] = [];
+
+    criteria = criteria.toLowerCase();
+
+    for (let i = 0; this.heroes.length > i; i++) {
+
+      let hero = this.heroes[i]
+      let name = hero.nombre.toLowerCase()
+
+      if (!name.indexOf(criteria)) {
+        return i;
+      }
+    }
+
+    return 0;
+  }
+
 }
+
+
+//búsqueda exacta
+  // if (criteria === name) {
+  //   heroesArray.push(hero);
+  // }
+
+  //búsqueda flexible
+  // if (!name.indexOf(criteria)) {
+  //   heroesArray.push(hero);
+  // }

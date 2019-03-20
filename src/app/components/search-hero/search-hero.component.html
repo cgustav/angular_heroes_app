@@ -4,31 +4,21 @@
 
 <hr>
 
-<div *ngIf="heroes.length === 0" class="">
-  <h4 class="text-center text-muted">No heroes found :(</h4>
+<div class="row" *ngIf="heroes.length === 0">
+  <div  class="col-md-12">
+    <!-- <h4 class="text-center text-muted">No heroes found :(</h4> -->
+    <div class="alert alert-info" role="alert">
+      No heroes found for {{ searchParam }}
+    </div>
+  </div>
 </div>
 
 <!-- CARD COLUMNS: AUTO -->
 <div *ngIf="heroes.length > 0" class="card-columns mt-4 animated fadeIn fast">
 
   <!-- CARD: NGFOR -->
-  <div class="card" *ngFor="let heroe of heroes; let i = index">
-    <img class="card-img-top" [src]="heroe.img" [alt]="heroe.nombre">
-    <div class="card-body">
-      <h5 class="card-title">{{ heroe.nombre }}</h5>
-      <p class="card-text">{{ heroe.bio }}</p>
-      <p class="card-text">Aparición: <small class="text-muted">{{ heroe.aparicion }}</small></p>
-
-      <button (click)="verHeroe(i)" type="button" class="btn btn-outline-warning btn-block">
-        Ver más...
-      </button>
-
-      <!-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary">
-        Ver más...
-      </a> -->
-
-    </div>
-  </div>
+  <app-hero-card [hero]="hero" *ngFor="let hero of heroes" [index]="hero.id">
+  </app-hero-card>
   <!-- CARD: NGFOR -->
 
 </div>
